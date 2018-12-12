@@ -77,9 +77,9 @@ TrajetCompose::~TrajetCompose()
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
 
-	for (unsigned int i=0; i< nbTrajets; i++)
+	for (unsigned int i=0; i< nbAlloue; i++)
 	{
-		if (trajets[i] != NULL) {delete[] trajets[i]}
+		if (trajets[i] != NULL) {delete[] trajets[i];}
 	}
 	if (trajets != NULL) {delete[] trajets; trajets = NULL;}
 	nbAlloue = 0;
