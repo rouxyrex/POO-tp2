@@ -10,10 +10,13 @@ void	TestTrajet1()
 	TrajetCompose tc1("tc1", "lyon", "paris", 5);
 	TrajetSimple ts1("ts1", "lyon", "grenoble", "bus");
 	
-	tc1.Afficher();
-	/*tc1.AjouterTrajet(ts1);	
+	Trajet* ptr;
+	ptr = &ts1;
+	tc1.AjouterTrajet(ptr);
+	//tc1.Afficher();
+	/*tc1.AjouterTrajet(ts1);*/	
 	ts1.Afficher();
-	tc1.Afficher();*/
+	tc1.Afficher();
 }
 
 int		main()

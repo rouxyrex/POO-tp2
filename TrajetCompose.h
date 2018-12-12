@@ -30,7 +30,7 @@ public:
   //----------------------------------------------------- Méthodes publiques
   void Afficher() const;
   
-  void AjouterTrajet(Trajet t);
+  void AjouterTrajet(Trajet *t);
  
   //-------------------------------------------- Constructeurs - destructeur
   

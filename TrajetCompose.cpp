@@ -24,17 +24,16 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 	void TrajetCompose::Afficher () const
 	{
-		int i;
-		for (i=0; i < nbAlloue; i++)
+		for (unsigned int i=0; i < nbAlloue; i++)
 		{
-			trajets[i]->Trajet::Afficher();
+			(*(trajets[i])).Trajet::Afficher();
 		}
 	}
 
 
-void	TrajetCompose::AjouterTrajet(Trajet t)
+void	TrajetCompose::AjouterTrajet(Trajet* t)
 {
-	trajets[nbAlloue] = &t;
+	trajets[nbAlloue] = t;
 	nbAlloue++;
 }
 
@@ -50,7 +49,7 @@ TrajetCompose::TrajetCompose( const TrajetCompose & unTrajetCompose ) : Trajet(u
 	nbTrajets = unTrajetCompose.nbTrajets;
 	nbAlloue = unTrajetCompose.nbAlloue;
 	
-	for (int i = 0 ; i < nbAlloue ; i++)
+	for (unsigned int i = 0 ; i < nbAlloue ; i++)
 	{
 		Trajet t(*(unTrajetCompose.trajets[i]));
 		trajets[i] = &t;
@@ -80,9 +79,11 @@ TrajetCompose::~TrajetCompose()
 
 	for (unsigned int i=0; i< nbTrajets; i++)
 	{
-		delete [] trajets[i];
+		if (trajets[i] != NULL) {delete[] trajets[i]}
 	}
-	delete[] trajets;
+	if (trajets != NULL) {delete[] trajets; trajets = NULL;}
+	nbAlloue = 0;
+	nbTrajets = 0;
 } //----- Fin de ~TrajetCompose
 
 

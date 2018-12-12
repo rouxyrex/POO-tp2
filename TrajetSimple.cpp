@@ -28,11 +28,6 @@ using namespace std;
 		cout << nom << " = de " << villeD << " � " << villeA << " en " << mTrans << "\r\n";
 	} //----- Fin de Méthode
 
-/*	void TrajetSimple::Afficher (  ) const
-	{
-		Trajet::Afficher();
-		cout <<"mt : " << mTrans << "\r\n";
-	} //----- Fin de Méthode*/
 
 //-------------------------------------------- Constructeurs - destructeur
 TrajetSimple::TrajetSimple ( const TrajetSimple & unTrajetSimple) : Trajet(unTrajetSimple)
