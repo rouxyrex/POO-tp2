@@ -72,17 +72,18 @@ TrajetCompose::TrajetCompose(const char* nom, const char* VD, const char* VA, un
 } //----- Fin de TrajetCompose
 
 
-/*TrajetCompose::~TrajetCompose()
+TrajetCompose::~TrajetCompose()
 {
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
-	for (int i=0; i< nbTrajets; i++)
+
+	for (unsigned int i=0; i< nbTrajets; i++)
 	{
-		delete trajets[i];
+		delete [] trajets[i];
 	}
 	delete[] trajets;
-} //----- Fin de ~TrajetCompose*/
+} //----- Fin de ~TrajetCompose
 
 
 //------------------------------------------------------------------ PRIVE

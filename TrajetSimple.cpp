@@ -67,8 +67,6 @@ TrajetSimple::~TrajetSimple()
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetSimple>" << endl;
 #endif
-
-	Trajet::~Trajet;
 	if(mTrans!=NULL) { delete [] mTrans; mTrans = NULL; } 
 } //----- Fin de ~TrajetSimple
 
